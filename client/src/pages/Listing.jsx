@@ -16,8 +16,6 @@ import {
 } from 'react-icons/fa';
 import Contact from '../components/Contact';
 
-// https://sabe.io/blog/javascript-format-numbers-commas#:~:text=The%20best%20way%20to%20format,format%20the%20number%20with%20commas.
-
 export default function Listing() {
   SwiperCore.use([Navigation]);
   const [listing, setListing] = useState(null);
@@ -96,7 +94,7 @@ export default function Listing() {
                 : listing.regularPrice.toLocaleString('en-US')}
               {listing.type === 'rent' && ' / month'}
             </p>
-            <p className='flex items-center mt-6 gap-2 text-slate-600  text-sm'>
+            <p className='flex items-center mt-6 gap-2 text-slate-600 text-sm'>
               <FaMapMarkerAlt className='text-green-700' />
               {listing.address}
             </p>
@@ -136,6 +134,15 @@ export default function Listing() {
                 {listing.furnished ? 'Furnished' : 'Unfurnished'}
               </li>
             </ul>
+            {/* WhatsApp Button */}
+            <a
+              href={`https://wa.me/${listing.phoneNumber}?text=${encodeURIComponent(`I'm interested in your property listing: ${listing.name}`)}`}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='bg-green-500 text-white rounded-lg uppercase hover:opacity-95 p-3 my-3 block text-center'
+            >
+              Contact Us Through WhatsApp
+            </a>
             {currentUser && listing.userRef !== currentUser._id && !contact && (
               <button
                 onClick={() => setContact(true)}
