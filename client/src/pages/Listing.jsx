@@ -135,14 +135,15 @@ export default function Listing() {
               </li>
             </ul>
             {/* WhatsApp Button */}
-            <a
-              href={`https://wa.me/${listing.phoneNumber}?text=${encodeURIComponent(`I'm interested in your property listing: ${listing.name}`)}`}
-              target='_blank'
-              rel='noopener noreferrer'
-              className='bg-green-500 text-white rounded-lg uppercase hover:opacity-95 p-3 my-3 block text-center'
-            >
-              Contact Us Through WhatsApp
-            </a>
+<a
+  href={`https://wa.me/919116544030?text=${encodeURIComponent("I'm interested in your property listing")}`}
+  target='_blank'
+  rel='noopener noreferrer'
+  className='bg-green-500 text-white rounded-lg uppercase hover:opacity-95 p-3 my-3 block text-center'
+>
+  Contact Us Through WhatsApp
+</a>
+
             {currentUser && listing.userRef !== currentUser._id && !contact && (
               <button
                 onClick={() => setContact(true)}
